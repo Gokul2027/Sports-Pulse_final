@@ -1,0 +1,573 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+html {
+    scroll-behavior:smooth;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-image: url('sports-tools.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 90px; /* Added padding to avoid overlap with fixed header */
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures header is above other content */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Header content */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.register1{
+    color: yellow;
+}
+.hello{
+    text-decoration: none; /* Remove underline */
+    color: #ffd700; /* Gold color for elegance */
+    font-size: 24px; /* Larger font size for prominence */
+    font-weight: bold; /* Bold text for emphasis */
+    position: relative; /* To position the pseudo-element */
+    padding: 5px 10px; /* Padding for spacing */
+    border-radius: 5px; /* Rounded corners */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.hello:hover {
+    color: #fff; /* Change text color on hover */
+}
+
+.hello:hover::after {
+    transform: scaleX(1); /* Show underline on hover */
+}
+
+
+.logo{
+    color: yellow;
+}
+
+.logo-image {
+    width: 50px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 15px;
+    display: inline;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a:hover {
+    background-color: #ffd700; /* Gold background */
+    color: #000; /* Black text */
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3); /* Subtle glow effect */
+}
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffd700;
+    transition: all 0.4s ease-in-out;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+/* Container */
+.container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* Registration Section */
+.registration-section {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 60px; /* Increased padding for larger appearance */
+    border-radius: 10px;
+    margin: 60px auto;
+    max-width: 700px; /* Increased width */
+    transition: all 0.4s ease;
+}
+
+.registration-section:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+}
+
+.registration-section h2 {
+    font-size: 34px; /* Increased font size */
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffd700;
+}
+
+.registration-form label {
+    font-size: 18px; /* Increased label font size */
+}
+
+.registration-form input,
+.registration-form select {
+    width: 100%;
+    padding: 15px; /* Increased padding */
+    margin: 10px 0;
+    font-size: 18px; /* Increased font size */
+    border-radius: 5px;
+    border: none;
+}
+
+.registration-form button {
+    width: 100%;
+    padding: 20px; /* Larger button size */
+    background-color: #ffd700; /* Gold color for contrast */
+    color: #000;
+    font-size: 20px; /* Increased font size */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.registration-form button:hover {
+    background-color: #f0f0f0;
+}
+
+/* News Section */
+.news-section {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    margin: 60px auto;
+    max-width: 900px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.news-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ffd700;
+}
+
+.news-article {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.news-article:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.news-article h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.news-article p {
+    line-height: 1.6;
+}
+
+.news-article a {
+    color: #ffd700;
+    border-bottom: 1px solid #ffd700;
+}
+
+.news-article a:hover {
+    color: #fff;
+}
+
+/* Upcoming Events Section */
+.upcoming-events-section {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 40px auto;
+    width: 85%;
+    max-width: 800px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.upcoming-events-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffd700;
+}
+
+.event-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.event-list li:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.event-list li span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+}
+
+footer p {
+    color: #ffd700;
+    font-size: 16px;
+}
+/* Feedback Section */
+.feedback-section {
+    background-color: rgba(0, 0, 0, 0.85); /* Dark semi-transparent background */
+    color: #fff;
+    padding: 60px;
+    border-radius: 15px; /* Larger rounded corners */
+    margin: 50px auto; /* Centered with top and bottom margin */
+    max-width: 800px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Adds depth with shadow */
+    text-align: center;
+}
+
+.feedback-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ffd700; /* Gold color for the heading */
+}
+
+.feedback-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #ccc; /* Lighter text color */
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedback-form label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%; /* Stretch labels to the full width */
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-radius: 10px; /* Rounded corners for inputs */
+    border: 1px solid #ccc; /* Subtle border */
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    color: #fff; /* White text */
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+    outline: none;
+    border-color: #ffd700; /* Highlighted border on focus */
+    background-color: rgba(255, 255, 255, 0.3); /* Slightly brighter background */
+}
+
+.feedback-form button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #ffd700; /* Gold button */
+    color: #000;
+    border: none;
+    border-radius: 50px; /* Circular button */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3); /* Button shadow */
+}
+
+.feedback-form button:hover {
+    background-color: #fff; /* Lighter background on hover */
+    color: #000;
+    transform: translateY(-3px); /* Slight lift effect */
+}
+#contact .container{
+    text-align: center;
+    background-color:black;
+     border: solid;
+     width: fit-content;
+     border-radius: 20px;
+     border-width: 2px;
+   border-color: yellow;
+}
+.event-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between boxes */
+    margin-top: 20px; /* Space above the boxes */
+}
+
+.event-box {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    padding: 20px; /* Padding inside each box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling and shadow transition */
+}
+
+.event-box:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+}
+
+.enroll-button {
+    margin-top: 15px; /* Space above the button */
+    padding: 10px 20px; /* Padding inside the button */
+    background-color: #ffd700; /* Gold button */
+    color: #000; /* Black text */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 16px; /* Button text size */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background and transform */
+}
+
+.enroll-button:hover {
+    background-color: #f0f0f0; /* Light grey background on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+/* Optional: Add focus styles for better accessibility */
+.enroll-button:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.5); /* Gold glow effect */
+}
+/* Alumni Connect Section */
+/* Alumni Connect Section */
+.alumni-connect-section {
+    background-color: rgba(0, 0, 0, 0.9); /* Match existing dark background */
+    padding: 40px; /* Padding similar to other sections */
+    border-radius: 10px; /* Rounded corners for consistency */
+    margin: 60px auto; /* Centered with margin */
+    max-width: 900px; /* Match width with other sections */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+/* Heading Styles */
+.alumni-connect-section h2 {
+    font-size: 32px; /* Font size for section heading */
+    margin-bottom: 30px; /* Space below heading */
+    text-align: center; /* Center the heading */
+    color: #ffd700; /* Gold color for heading */
+}
+
+/* Alumni Experience Box */
+.alumni-experience-box {
+    background-color: rgba(255, 255, 255, 0.1); /* Match existing box color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Inner padding */
+    margin-bottom: 20px; /* Space between experience boxes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.alumni-experience-box:hover {
+    transform: scale(1.02); /* Slightly scale on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+}
+
+/* Summary Style */
+.summary {
+    font-style: italic; /* Italicize summary */
+    color: #ccc; /* Light color for the summary text */
+}
+
+/* Button Styles */
+.read-more-button {
+    background-color: #ffd700; /* Gold color for button */
+    color: #000; /* Black text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 10px; /* Space above button */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.read-more-button:hover {
+    background-color: #f0f0f0; /* Light grey on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Detailed Experience Style */
+.detailed-experience {
+    display: none; /* Hidden by default */
+    margin-top: 15px; /* Space above detailed content */
+    padding: 10px; /* Padding for detailed content */
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent background */
+    border-radius: 5px; /* Rounded corners */
+    border-left: 5px solid #ffd700; /* Gold left border */
+    color: #fff; /* White text for detailed experience */
+}
+/* Add this CSS for the Home button styling */
+.header-container {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+}
+
+.home-button {
+    text-decoration: none; /* Remove underline */
+    color: #ffd700; /* Gold color for elegance */
+    font-size: 24px; /* Larger font size for prominence */
+    font-weight: bold; /* Bold text for emphasis */
+    position: relative; /* To position the pseudo-element */
+    padding: 5px 10px; /* Padding for spacing */
+    border-radius: 5px; /* Rounded corners */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.home-button::after {
+    content: ""; /* Pseudo-element for decoration */
+    position: absolute;
+    width: 100%; /* Match width of link */
+    height: 2px; /* Height of the underline effect */
+    background: #ffd700; /* Gold color */
+    left: 0; /* Align to the left */
+    bottom: -5px; /* Position below the text */
+    transform: scaleX(0); /* Initially hide the underline */
+    transition: transform 0.3s ease; /* Smooth transition for the underline */
+}
+
+.home-button:hover {
+    color: #fff; /* Change text color on hover */
+}
+
+.home-button:hover::after {
+    transform: scaleX(1); /* Show underline on hover */
+}
+/* Image Slider Section */
+/* Collage Section */
+.collage-section {
+    background-color: rgba(0, 0, 0, 0.9);
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffd700;
+    border-radius: 5px;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 60px auto;
+    max-width: 900px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.collage-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.collage-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.collage-slide {
+    display: flex;
+    min-width: 100%;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+}
+
+.collage-slide img {
+    width: 900px;
+    border-radius: 10px;
+    filter: brightness(0.9);
+    transition: filter 0.3s ease;
+}
+
+.collage-slide img:hover {
+    filter: brightness(1); /* Brighten image on hover */
+}
+
+.collage-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.collage-buttons button {
+    background-color: rgba(255, 215, 0, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.collage-buttons button:hover {
+    background-color: #ffd700; /* Darker gold on hover */
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <link rel="stylesheet" href="style3.css">
+    <style>
+        /* Add some basic styles for the icon */
+        .home-icon {
+            width: 30px; /* Adjust size as needed */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            position: absolute; /* Position it absolutely */
+            top: 20px; /* Adjust vertical position */
+            left: 20px; /* Adjust horizontal position */
+        }
+        /* Style to visually indicate disabled state */
+        .disabled-select {
+            background-color: #f0f0f0; /* Light gray background */
+            color: #888; /* Gray text */
+            pointer-events: none; /* Disable interactions */
+        }
+    </style>
+</head>
+<body>
+    <a href="Index1.html" class="home-link">Home</a>
+
+    <div class="container">
+        <h1>Event Registration</h1>
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phonenumber">Phone Number:</label>
+            <input type="tel" id="phonenumber" name="phonenumber" maxlength="10" pattern="\d{10}" required> <!-- Limit to 10 digits -->
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="event">Event:</label>
+            <select id="event" name="event" required disabled class="disabled-select"> <!-- Disabled and styled -->
+                <option value="Volleyball">Volleyball</option>
+                <option value="Football">Football</option>
+                <option value="Kabaddi">Kabaddi</option>
+                <option value="Basketball">Basketball</option>
+            </select>
+            <p id="selectedEvent"></p> <!-- Display the selected event name -->
+            <button type="submit">Register</button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Function to get query parameters from the URL
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.slice(1);
+            const pairs = queryString.split('&');
+
+            pairs.forEach(pair => {
+                const [key, value] = pair.split('=');
+                params[decodeURIComponent(key)] = decodeURIComponent(value.replace(/\+/g, ' '));
+            });
+
+            return params;
+        }
+
+        // Set the selected event based on URL parameters
+        const params = getQueryParams();
+        if (params.event) {
+            const eventSelect = document.getElementById("event");
+            eventSelect.value = params.event; // Set the selected event in the dropdown
+            document.getElementById("selectedEvent").textContent = `Selected Event: ${params.event}`; // Display the selected event
+        }
+    </script>
+</body>
+</html>

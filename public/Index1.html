@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stay updated on all sports events and news at SRM University.">
+    <meta name="keywords" content="Sports Pulse, SRM, Sports Events, Football, Basketball, Kabaddi, Volleyball">
+    <title>Sports Pulse | SRM</title>
+    <link rel="stylesheet" href="style1.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+
+    <!-- Header with Logo and Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html">
+                <img src="Srmseal.png" alt="Sports Pulse Logo" class="logo-image">
+            </a>
+            <h1 class="logo">Sports Pulse</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#news">Sports News</a></li>
+                    <li><a href="#upcoming-events">Upcoming Events</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="Alumni.html">Alumni Connect</a></li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Latest Sports News Section -->
+    <section id="news" class="news-section">
+        <div class="container">
+            <h2>Latest Sports News</h2>
+
+            <article class="news-item">
+                <h3>Football Team Heads to National Finals:</h3>
+                <p>SRM's football team continues their remarkable journey as they head to the National Finals after a nail-biting 2-1 victory in the semi-finals. Captain Rahul Sharma scored the winning goal in the final minutes, driving the crowd into a frenzy. The final match is scheduled for September 25, 2024, at SRM Main Stadium.</p>
+            </article><br>
+            <article class="news-item">
+                <h3>Basketball League Champions: SRM Triumphs:</h3>
+                <p>SRM's basketball team has been crowned state champions after a resounding 88-74 victory in the final. Led by MVP Aditya Roy, the team dominated their opponents with aggressive offense and solid defense.</p>
+            </article><br>
+            <article class="news-item">
+                <h3>Kabaddi Team's Dominating Win in the Semifinals</h3>
+                <p>SRM's kabaddi team secured a stunning victory in the semifinals with a 40-point lead. Captain Vivek Kumar led the charge, and the team's flawless raiding tactics helped seal their place in the finals on September 28, 2024.</p>
+            </article><br>
+            <article class="news-item">
+                <h3>Volleyball Team Prepares for Regional Tournament</h3>
+                <p>SRM's volleyball team is preparing for the regional tournament on November 1, 2024. Coach Neha Verma is optimistic about the team's chances after a series of strong performances this season.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Image Collage Slider Section -->
+    <section id="picture-collage" class="collage-section">Photo Gallery</section>
+    <div class="collage-container">
+        <div class="collage-slider">
+            <div class="collage-slide active">
+                <img src="img1.jpg" alt="Image 1">
+            </div>
+            <div class="collage-slide">
+                <img src="img2.jpg" alt="Image 2">
+            </div>
+            <div class="collage-slide">
+                <img src="img3.jpg" alt="Image 3">
+            </div>
+            <div class="collage-slide">
+                <img src="img4.jpg" alt="Image 4">
+            </div>
+            <div class="collage-slide">
+                <img src="img5.jpg" alt="Image 5">
+            </div>
+            <div class="collage-slide">
+                <img src="img6.jpg" alt="Image 6">
+            </div>
+            <!-- Add more images as needed -->
+        </div>
+        <div class="collage-buttons">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </div>
+</section>
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.collage-slide');
+
+    function changeSlide(direction) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+        updateSliderPosition();
+    }
+
+    function updateSliderPosition() {
+        const slider = document.querySelector('.collage-slider');
+        const offset = -currentSlide * 100; // Move left based on the current slide
+        slider.style.transform = `translateX(${offset}%)`;
+    }
+</script>
+
+    <!-- Upcoming Events Section -->
+    <section id="upcoming-events" class="upcoming-events-section">
+        <div class="container">
+            <h2>Upcoming Events</h2>
+            <ul class="event-list">
+                <li>
+                    <span>Volleyball Tournament Finals</span>
+                    <span>October 5, 2024</span>
+                </li>
+                <li>
+                    <span>Football Match</span>
+                    <span>September 20, 2024</span>
+                </li>
+                <li>
+                    <span>Kabaddi Invitational Match</span>
+                    <span>October 10, 2024</span>
+                </li>
+                <li>
+                    <span>Basketball Exhibition Game</span>
+                    <span>November 1, 2024</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2024 Sports Pulse | SRM | Contact us at: <a href="mailto:sports@srm.edu">sports@srm.edu</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>

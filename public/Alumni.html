@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Connect</title>
+    <link rel="stylesheet" href="style1.css"> <!-- Ensure to include your CSS file -->
+</head>
+<body>
+
+<!-- Home Navigation Button -->
+<header>
+    <div class="header-container">
+        <a href="index1.html" class="home-button">Home</a> <!-- Home button -->
+        <h1 style="color: yellow;">Alumni Connect</h1>
+    </div>
+</header>
+
+<!-- Alumni Connect Section -->
+<section id="alumni-connect" class="alumni-connect-section">
+    <div class="container">
+        <h2>Alumni Connect</h2>
+        <p>Hear from our alumni about their memorable experiences in various sporting events at SRM University.</p>
+        
+        <div class="alumni-experience-box">
+            <h3>Rahul Sharma - Football Champion</h3>
+            <p class="summary">"The thrill of playing in the finals was indescribable! Winning the championship brought our team together like never before."</p>
+            <button class="read-more-button" onclick="toggleExperience(this)">
+                <span class="icon">🔽</span> Read More
+            </button>
+            <div class="detailed-experience">
+                <p>During my time at SRM, I had the incredible opportunity to lead our football team to the finals. The support from our coaches and fellow students created an electrifying atmosphere.The thrill of playing in the finals was indescribable! It was the culmination of a season filled with hard work and determination. As we stepped onto the field, the excitement from our fans fueled our adrenaline.
+
+The first half was intense, with both teams giving their all. Despite falling behind just before halftime, we regrouped and focused on our strategy. The second half saw us playing with renewed vigor, showcasing our teamwork.
+
+With only minutes left and the score tied, I positioned myself near the penalty area. When our midfielder made a perfect cross, I leaped and connected with the ball, scoring the winning goal. The stadium erupted in cheers, and we had done it!
+
+Lifting the trophy together was surreal. It symbolized not just victory, but the bonds we formed and the perseverance we demonstrated throughout the season. Those experiences taught me invaluable lessons in leadership and teamwork that I carry into my professional life today.
+
+The championship match at SRM University will always remind me of the power of collective effort and the joy of shared success.</p>
+            </div>
+        </div>
+
+        <div class="alumni-experience-box">
+            <h3>Aditya Roy - Basketball MVP</h3>
+            <p class="summary">"Being crowned MVP was a dream come true! The teamwork and dedication we put in were the keys to our success."</p>
+            <button class="read-more-button" onclick="toggleExperience(this)">
+                <span class="icon">🔽</span> Read More
+            </button>
+            <div class="detailed-experience">
+                <p>Winning the state championship as the MVP of the basketball team was one of the highlights of my university life.Being crowned MVP was a dream come true! The journey to that moment was filled with countless hours of practice and unwavering dedication from our entire team.
+
+As the season progressed, we faced numerous challenges, including injuries and tough opponents. However, each practice brought us closer together, solidifying our chemistry on and off the court. The final match was a true test of our skills and determination.
+
+I vividly remember the adrenaline rush as the clock wound down, and we were neck and neck with our rivals. With just seconds left, I received the ball and made a crucial shot that clinched our victory. The roar of our supporters was deafening, and holding the trophy aloft felt surreal.</p>
+            </div>
+        </div>
+
+        <div class="alumni-experience-box">
+            <h3>Vivek Kumar - Kabaddi Star</h3>
+            <p class="summary">"Winning the semifinals felt like a huge accomplishment, and I'm proud of how far we've come as a team."</p>
+            <button class="read-more-button" onclick="toggleExperience(this)">
+                <span class="icon">🔽</span> Read More
+            </button>
+            <div class="detailed-experience">
+                <p>Our kabaddi team worked tirelessly throughout the season, and reaching the finals was the culmination of our hard work.Winning the semifinals felt like a huge accomplishment, and I'm proud of how far we've come as a team. The journey to that moment was filled with hard work, dedication, and a shared passion for the sport.
+
+Throughout the season, our kabaddi team faced many challenges, including tough opponents and demanding training sessions. Each match tested our strength and strategy, but it was our teamwork that truly shone. I remember the semifinal match vividly; we executed our strategies flawlessly, showcasing our chemistry and commitment to each other.
+
+The thrill of competing in front of our university and friends made every moment worthwhile. Celebrating our victory together was unforgettable, and it solidified the bonds we formed throughout the season. Even after graduation, those friendships remain strong as we continue to support one another.
+
+This experience taught me invaluable lessons in resilience and mental fortitude. Now, as a sports coach, I aim to inspire the next generation of athletes, instilling in them the same values that helped our team succeed.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+function toggleExperience(button) {
+    const detailedExperience = button.nextElementSibling; // Select the next sibling
+    const icon = button.querySelector('.icon');
+    
+    // Toggle display style and icon
+    if (detailedExperience.style.display === "none" || detailedExperience.style.display === "") {
+        detailedExperience.style.display = "block"; // Show the detailed experience
+        icon.textContent = '🔼';  // Change to up arrow
+    } else {
+        detailedExperience.style.display = "none"; // Hide the detailed experience
+        icon.textContent = '🔽';  // Change to down arrow
+    }
+}
+
+// Hide detailed experiences by default
+document.addEventListener("DOMContentLoaded", function() {
+    const experiences = document.querySelectorAll('.detailed-experience');
+    experiences.forEach(exp => {
+        exp.style.display = 'none'; // Initially hide all detailed experiences
+    });
+});
+</script>
+
+</body>
+</html>
